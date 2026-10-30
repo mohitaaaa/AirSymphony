@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glowing text & shadows */
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.6);
+}
+.text-glow-purple {
+  text-shadow: 0 0 12px rgba(184, 41, 255, 0.6);
+}
+.text-glow-pink {
+  text-shadow: 0 0 12px rgba(255, 45, 117, 0.6);
+}
+.box-glow-cyan {
+  box-shadow: 0 0 20px -3px rgba(0, 243, 255, 0.35);
+}
+.box-glow-purple {
+  box-shadow: 0 0 20px -3px rgba(184, 41, 255, 0.35);
+}
+.box-glow-red {
+  box-shadow: 0 0 25px -2px rgba(239, 68, 68, 0.55);
+}
+
+/* Glassmorphism surfaces */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-accent {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+/* Pulse animation for recording beacon */
+@keyframes recordPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-record-dot {
+  animation: recordPulse 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
