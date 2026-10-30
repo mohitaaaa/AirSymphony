@@ -135,8 +135,11 @@ async def websocket_gesture_stream(websocket: WebSocket):
 
 if __name__ == "__main__":
     import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+
     print("=" * 70)
-    print("🚀 AIRSYMPHONY: Python CNN + LSTM Neural Network Engine Online")
-    print("   Endpoints: http://127.0.0.1:8000 | WebSocket: ws://127.0.0.1:8000/ws/gesture")
+    print("AIRSYMPHONY: Python Neural Network Engine Online")
+    print(f"Server running on port {port}")
     print("=" * 70)
-    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
+
+    uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")
