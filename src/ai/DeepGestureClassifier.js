@@ -94,7 +94,7 @@ export class DeepGestureClassifier {
     this.wsConnecting = true;
 
     try {
-      const ws = new WebSocket('ws://127.0.0.1:8000/ws/gesture');
+      const ws = new WebSocket('wss://airsymphony.onrender.com/ws/gesture');
       
       ws.onopen = () => {
         this.pythonConnected = true;
